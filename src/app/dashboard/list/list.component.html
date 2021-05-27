@@ -1,0 +1,77 @@
+<div class="float-right">
+  <ul class="breadcrumb">
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Relocate</a></li>
+    <li><a href="#">Employee</a></li>
+    
+  </ul>
+</div>
+
+
+
+<h2>Search the right candidate from below list!</h2>
+<br>
+
+
+  Employee list <app-add-item  (listAdd)="addlists($event)"></app-add-item> 
+                <button type="button" class="btn btn-danger">Delete</button>
+
+
+
+
+<table class="table " id="myTable">
+  <thead>
+    <tr>
+      <th scope="col"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Designation</th>
+      <th scope="col">technologies</th>
+      <th scope="col">Skill</th>
+      <th scope="col">Availability</th>
+      <th scope="col">Baselocation</th>
+      <th scope="col">Open Relocate</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of lists">
+      <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+      <td>{{list.Name}}</td>
+      <td>{{list.Desi}}</td>
+      <td>{{list.Tech}}</td>
+      <td>{{list.Skill}}</td>
+      <td>{{list.Avab}}</td>
+      <td>{{list.Base}}</td>
+      <td>{{list.Relo}}</td>
+      <td>
+        
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" id="detail">
+          Details
+        </button>
+
+        
+        <div class="modal " id="Modal" >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+               <div class="row">
+                 Name: {{list.Name}}  <br>     Designation:  {{list.Desi}}
+               </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>

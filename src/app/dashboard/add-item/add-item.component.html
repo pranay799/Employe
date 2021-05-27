@@ -1,0 +1,67 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Add
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add Employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="onSubmit()" >
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="text" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="Name" name="Name" [ngModel]="Name" [ngModelOptions]="{standalone: true}" >
+
+                        </div>
+                        <div class="col-3">
+                            <label for="text" class="form-label">Designation</label>
+                            <input type="text" class="form-control" id="Desi" name="Desi" [ngModel]="Desi" [ngModelOptions]="{standalone: true}"><br>
+                        </div>
+                        <div class="col-3">
+                            <label for="text" class="form-label">technology</label>
+                            <input type="text" class="form-control" id="Tech"  name="Tech"[ngModel]="Tech" [ngModelOptions]="{standalone: true}"><br>
+                        </div>
+                        <div class="col-2">
+                            <label for="number" class="form-label">Availability</label>
+                            <input type="number" class="form-control" id="Avab" name="Avab" [ngModel]="Avab" [ngModelOptions]="{standalone: true}"><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="text" class="form-label">Skill</label>
+                            <input type="text" class="form-control" id="Skill" name="Skill" [ngModel]="Skill" [ngModelOptions]="{standalone: true}">
+
+                        </div>
+                        <div class="col-4">
+                            <label for="text" class="form-label">Baselocation</label>
+                            <input type="text" class="form-control" id="Base"  name= "Base" [ngModel]="Base" [ngModelOptions]="{standalone: true}"><br>
+                        </div>
+                        <div class="col-4">
+                            <label for="text" class="form-label">Open Relocate</label>
+                            <select class="form-select" id="Relo" name="Relo" [ngModel]="Relo" [ngModelOptions]="{standalone: true}">
+                                <option selected></option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
